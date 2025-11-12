@@ -1,3 +1,5 @@
 dash==3.2.0
 pandas==2.3.3
 dash[testing]
+gunicorn==21.2.0      # ← For serving the app
+plotly>=5.0.0         # ← Explicitly included

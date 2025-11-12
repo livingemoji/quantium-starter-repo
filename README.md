@@ -33,6 +33,15 @@ Then start the Dash app:
 python app.py
 ```
 
+### Hosting the Dashboard
+
+The dashboard can be hosted online on multiple platforms for public access. See [`HOSTING.md`](HOSTING.md) for detailed hosting options including:
+- **Render** (recommended - free tier available)
+- **Heroku** (easy setup)
+- **PythonAnywhere** (simplest)
+- **Google Cloud Run** (scalable)
+- **AWS Elastic Beanstalk** (enterprise)
+
 ### Features
 
 The dashboard includes:

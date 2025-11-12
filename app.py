@@ -3,6 +3,7 @@ Dash application to visualize Pink Morsel sales data over time.
 Answers the question: Were sales higher before or after the price increase on Jan 15, 2021?
 Includes region filtering and enhanced styling.
 """
+import os
 import pandas as pd
 from dash import Dash, dcc, html, callback, Input, Output
 import plotly.graph_objects as go
@@ -285,7 +286,11 @@ app.layout = html.Div([
 def update_chart(selected_region):
     return create_figure(selected_region)
 
+# Production server configuration
+server = app.server
+
 if __name__ == '__main__':
-    print("Starting Dash app on http://127.0.0.1:8050/")
-    print("Press Ctrl+C to stop the server")
-    app.run(debug=True)
+    # Get port from environment variable, default to 8080 for local development
+    port = int(os.environ.get('PORT', 8080))
+    debug = os.environ.get('DEBUG', 'False').lower() == 'true'
+    app.run(debug=debug, host='0.0.0.0', port=port)
