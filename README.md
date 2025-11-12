@@ -33,13 +33,29 @@ Then start the Dash app:
 python app.py
 ```
 
-The app will start on `http://127.0.0.1:8050/` and display an interactive line chart showing:
-- Daily total sales of Pink Morsels across all regions over time
-- A marked indicator for the price increase date (January 15, 2021)
-- Hover tooltips to inspect individual daily sales values
+### Features
+
+The dashboard includes:
+- **Interactive line chart** showing daily sales trends with fill area visualization
+- **Region filter** with radio buttons to view sales by region (North, South, East, West) or all regions combined
+- **Price increase marker** - a red dashed line highlighting the price change date (January 15, 2021)
+- **Dynamic coloring** - each region has its own color for easy visual distinction
+- **Hover tooltips** - view exact sales values for any date by hovering over the chart
+- **Professional styling** with gradient backgrounds, shadows, and responsive design
+
+### Region Filtering
+
+Use the radio button filter at the top of the dashboard to switch between:
+- **All** - Combined sales from all regions
+- **North** - Northern region sales only
+- **South** - Southern region sales only
+- **East** - Eastern region sales only
+- **West** - Western region sales only
+
+The chart updates instantly when you change the selection, maintaining the price increase marker for reference.
 
 ### Key Insight
 
-The visualization clearly shows the impact of the price increase—there is a visible jump in total daily sales starting on January 15, 2021, indicating that despite higher prices, revenue increased.
+The visualization clearly shows the impact of the price increase—there is a visible and sustained jump in daily sales starting on January 15, 2021. This indicates that despite the higher prices, total revenue increased significantly.
 
 ````
