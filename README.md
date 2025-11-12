@@ -58,4 +58,43 @@ The chart updates instantly when you change the selection, maintaining the price
 
 The visualization clearly shows the impact of the price increase—there is a visible and sustained jump in daily sales starting on January 15, 2021. This indicates that despite the higher prices, total revenue increased significantly.
 
+## Testing
+
+A comprehensive test suite (`test_app.py`) ensures the Dash app functions correctly and contains all expected components. The tests use pytest and the Dash testing framework.
+
+### Test Coverage
+
+The test suite includes 4 tests organized into two test classes:
+
+#### `TestDashAppComponents` - Component Presence Tests
+1. **test_header_is_present** - Verifies the header with title "Pink Morsel Sales Dashboard" is present
+2. **test_visualization_is_present** - Confirms the dcc.Graph component (chart visualization) exists
+3. **test_region_picker_is_present** - Validates the dcc.RadioItems component for region filtering is present with all 5 options (All, North, South, East, West)
+
+#### `TestDashAppCallbacks` - Functionality Tests
+4. **test_sales_chart_callback_exists** - Ensures the callback function for chart updates is properly defined
+
+### Running the Tests
+
+From the repository root, execute the test suite:
+
+```
+python -m pytest test_app.py -v
+```
+
+The `-v` flag provides verbose output showing each test name and result.
+
+### Expected Output
+
+```
+test_app.py::TestDashAppComponents::test_header_is_present PASSED
+test_app.py::TestDashAppComponents::test_visualization_is_present PASSED
+test_app.py::TestDashAppComponents::test_region_picker_is_present PASSED
+test_app.py::TestDashAppCallbacks::test_sales_chart_callback_exists PASSED
+
+====== 4 passed in X.XXs ======
+```
+
+All tests should pass, confirming the dashboard is working as expected.
+
 ````
