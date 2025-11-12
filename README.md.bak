@@ -1,0 +1,17 @@
+# Quantium starter repo
+This repo contains everything you need to get started on the program! Good luck!
+
+## Processed data output
+
+A processed CSV containing only Pink Morsel sales has been generated at `data/processed_sales.csv`.
+
+This file contains three columns: `Sales`, `Date`, and `Region`.
+
+To regenerate it, run the processing script from the repository root:
+
+```
+python scripts\\process_sales.py
+```
+
+The script filters for product == "pink morsel" (case-insensitive), computes sales as price * quantity, and writes the combined output.
+

@@ -10,7 +10,7 @@ This file contains three columns: `Sales`, `Date`, and `Region`.
 To regenerate it, run the processing script from the repository root:
 
 ```
-python scripts\\process_sales.py
+python scripts/process_sales.py
 ```
 
 The script filters for product == "pink morsel" (case-insensitive), computes sales as price * quantity, and writes the combined output.
@@ -41,5 +41,3 @@ The app will start on `http://127.0.0.1:8050/` and display an interactive line c
 ### Key Insight
 
 The visualization clearly shows the impact of the price increase—there is a visible jump in total daily sales starting on January 15, 2021, indicating that despite higher prices, revenue increased.
-
-````
