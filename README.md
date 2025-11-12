@@ -97,4 +97,89 @@ test_app.py::TestDashAppCallbacks::test_sales_chart_callback_exists PASSED
 
 All tests should pass, confirming the dashboard is working as expected.
 
+## Continuous Integration
+
+To support continuous integration (CI/CD) pipelines, automated test scripts are provided that activate the virtual environment and run the test suite with proper exit code handling.
+
+### CI Test Scripts
+
+Two scripts are provided to support different environments:
+
+- **`run_tests.bat`** — Windows batch script for CI/CD systems (GitHub Actions, Azure Pipelines, etc.)
+- **`run_tests.sh`** — Bash script for Unix/Linux/macOS CI/CD systems
+
+Both scripts perform the same steps:
+1. Verify the virtual environment exists at `.venv`
+2. Activate the virtual environment
+3. Verify all dependencies are installed
+4. Run the test suite with pytest
+5. Return exit code 0 on success or 1 on failure
+
+### Using the CI Scripts Locally
+
+To run tests locally using the CI script:
+
+**Windows:**
+```
+.\run_tests.bat
+```
+
+**Unix/Linux/macOS:**
+```
+bash run_tests.sh
+```
+
+### Integrating with CI/CD Systems
+
+The scripts are designed to integrate seamlessly with popular CI/CD platforms:
+
+#### GitHub Actions Example
+```yaml
+name: Run Tests
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Create venv
+        run: python -m venv .venv
+      - name: Run tests
+        run: .\run_tests.bat
+```
+
+#### Expected Output
+```
+================================
+Pink Morsel Sales Dashboard - CI
+================================
+
+Step 1: Checking virtual environment...
+[OK] Virtual environment found
+
+Step 2: Activating virtual environment...
+[OK] Virtual environment activated
+
+Step 3: Verifying dependencies...
+[OK] All dependencies are installed
+
+Step 4: Running test suite...
+[all 4 tests PASS]
+
+[SUCCESS] CI BUILD SUCCESSFUL
+```
+
+### Exit Codes
+
+- **Exit code 0** — All tests passed, build successful
+- **Exit code 1** — One or more tests failed, build failed
+
+This allows CI/CD systems to automatically detect build status and take appropriate actions (e.g., block merges, notify developers, trigger deployments).
+
 ````
