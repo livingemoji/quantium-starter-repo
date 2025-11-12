@@ -144,7 +144,7 @@ def create_figure(selected_region):
 app.layout = html.Div([
     # Header
     html.Header([
-        html.H1('🥖 Pink Morsel Sales Dashboard', 
+        html.H1(' Pink Morsel Sales Dashboard', 
                  style={
                      'textAlign': 'center',
                      'marginBottom': 10,
@@ -226,7 +226,7 @@ app.layout = html.Div([
         # Info section
         html.Div([
             html.P(
-                '💡 Tip: Hover over the chart to see exact sales values for each day. The red dashed line marks the price increase date.',
+                ' Tip: Hover over the chart to see exact sales values for each day. The red dashed line marks the price increase date.',
                 style={
                     'color': '#555',
                     'fontSize': '14px',
@@ -248,7 +248,7 @@ app.layout = html.Div([
     # Footer
     html.Footer([
         html.P(
-            '📊 Data represents daily total sales of Pink Morsels. Analysis shows clear revenue impact from the price increase.',
+            ' Data represents daily total sales of Pink Morsels. Analysis shows clear revenue impact from the price increase.',
             style={
                 'textAlign': 'center',
                 'color': '#fff',
